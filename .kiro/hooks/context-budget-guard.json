@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Context Budget Guard",
+      "trigger": "PreToolUse",
+      "description": "읽기/검색 도구 실행 전에 컨텍스트 폭증 방지 규칙(대용량 파일 전체 읽기 금지, 광역 grep 금지)을 상기시킨다.",
+      "matcher": "read_file|read_files|grep_search|execute_pwsh",
+      "action": {
+        "type": "agent",
+        "prompt": "컨텍스트 폭증 방지 규칙을 지켜라. (1) 약 300줄을 넘는 파일은 전체를 한 번에 읽지 말고, grep_search나 read_code로 위치(줄 번호)를 먼저 찾은 뒤 start_line/end_line으로 해당 구간만 범위 읽기 하라. (2) 같은 파일을 매 턴 통째로 재읽기 하지 마라. (3) 파일 내용 검색은 셸 Select-String/findstr/grep이 아니라 grep_search 도구를 써라. (4) 검색은 includePattern으로 파일 유형/경로를 한정하고, 패턴을 구체적 문자열로 좁혀라. [가-힣] 같은 전수 매칭 광역 패턴은 금지한다. \"일단 넓게 잡고 눈으로 거른다\"는 접근을 버려라."
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "No Workspace Scripts",
+      "trigger": "PostFileCreate",
+      "description": "워크스페이스에 .ps1/.py 스크립트 파일이 생성되면 파일 없이 실행하는 방식으로 유도한다.",
+      "matcher": "\\.(ps1|py)$",
+      "action": {
+        "type": "agent",
+        "prompt": "방금 워크스페이스에 .ps1 또는 .py 스크립트 파일이 생성되었다. 스크립트 실행 규칙을 상기하라: 테스트/실행 목적의 스크립트는 워크스페이스에 파일로 남기지 않는다. 실행 우선순위는 1) 인라인 실행(powershell -Command / python -c) → 2) stdin 파이핑(here-string | python - 또는 powershell -) → 3) -EncodedCommand(Base64) → 4) 최후의 수단으로 %TEMP% 임시폴더뿐이다. 이 파일이 실행용 임시 산출물이라면 인라인/stdin 방식으로 전환하고, 워크스페이스에 만든 파일이라면 제거를 검토하라. 단, 방금 실행한 스크립트를 즉시 강제 삭제하지는 마라(Windows 파일 잠금으로 세션이 멈출 수 있음). 이 파일이 프로젝트의 정식 소스 파일이라면 규칙 대상이 아니므로 무시하라."
+      }
+    }
+  ]
+}

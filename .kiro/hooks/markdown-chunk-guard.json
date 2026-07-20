@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Markdown Chunk Guard",
+      "trigger": "PreToolUse",
+      "description": "긴 마크다운 문서(requirements/design/tasks 등)를 파일에 쓸 때 청크 상한선을 지키도록 상기시킨다.",
+      "matcher": "fs_write|fs_append",
+      "action": {
+        "type": "agent",
+        "prompt": "긴 .md 문서(requirements/design/tasks/Implementation Plan 등)를 작성 중이라면 무중단 생성 규칙을 지켜라. (1) 한 번의 fs_write/fs_append 호출은 최대 약 40줄 또는 약 1,500자 중 먼저 도달하는 쪽을 넘기지 마라. 코드블록/표가 포함되면 약 25-30줄로 더 잘게 끊어라. (2) 전체 문서를 단일 호출로 쓰지 말고, 먼저 제목과 목차만 fs_write로 만든 뒤 fs_append로 한 청크씩 이어써라. (3) \"남은 내용이 조금이니 한 번에 마무리\"라는 판단은 금지한다. (4) 채팅에 전문을 먼저 뿌린 뒤 복사해 저장하지 마라. (5) 목차의 모든 섹션이 채워질 때까지 멈추지 말고, 마지막에 파일 tail을 확인해 잘림/미완결이 없는지 검증하라."
+      }
+    }
+  ]
+}

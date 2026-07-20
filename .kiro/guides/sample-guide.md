@@ -4,11 +4,11 @@ inclusion: manual
 
 # (샘플) 통합 가이드 템플릿
 
-> 이 문서는 `guides/` 폴더에 두는 **통합 가이드의 형식과 사용법을 보여주는 샘플**입니다.
+> 이 문서는 `.kiro/guides/` 폴더에 두는 **통합 가이드의 형식과 사용법을 보여주는 샘플**입니다.
 > 실제 내용은 없으며, 팀/프로젝트 상황에 맞게 복사해 채워 쓰세요.
 >
 > 사용법: 관련 작업을 할 때 채팅에서 `#sample-guide`로 이 문서를 불러 참고하거나,
-> `steerings/guide-routing-rules.md`의 키워드 매핑에 등록해 자동으로 참고되게 합니다.
+> `.kiro/steering/guide-routing-rules.md`의 키워드 매핑에 등록해 자동으로 참고되게 합니다.
 
 ## 통합 가이드란
 
@@ -40,7 +40,7 @@ inclusion: manual
 
 ## 라우팅 규칙과 함께 쓰기
 
-`steerings/guide-routing-rules.md`의 매핑 표에 다음처럼 한 줄을 추가하면, 요청에 해당
+`.kiro/steering/guide-routing-rules.md`의 매핑 표에 다음처럼 한 줄을 추가하면, 요청에 해당
 키워드가 나올 때 이 가이드를 자동으로 참고합니다.
 
 | Guide 파일 | 트리거 키워드 |
