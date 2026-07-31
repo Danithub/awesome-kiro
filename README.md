@@ -55,6 +55,7 @@ steering은 Kiro가 응답할 때 **항상(또는 특정 조건에서) 함께 �
 | `subagent-fallback-rules.md` | 서브에이전트 위임이 실패/취소되면 멈추지 말고 직접 수행 |
 | `guide-routing-rules.md` | 요청에 특정 키워드가 나오면 `.kiro/guides/`의 해당 통합 가이드를 자동으로 참고 |
 | `tilde-strikethrough-rules.md` | 범위표기 `~`가 마크다운 취소선으로 오작동하는 문제 방지 |
+| `default-as-spec-workflow.md` | default(Vibe) 세션도 Spec처럼 "작업 전 문답 -> 작업 -> 산출물 정리(requirements/changes)" 흐름을 따르게 유도 |
 
 ## 수록된 hooks
 
