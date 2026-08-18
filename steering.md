@@ -36,6 +36,8 @@ steering은 Kiro가 응답할 때 **항상(또는 특정 조건에서) 함께 �
 | `guide-routing-rules.md` | 요청에 특정 키워드가 나오면 `.kiro/guides/`의 해당 통합 가이드를 자동으로 참고 |
 | `tilde-strikethrough-rules.md` | 범위표기 `~`가 마크다운 취소선으로 오작동하는 문제 방지 |
 | `default-as-spec-workflow.md` | default(Vibe) 세션도 Spec처럼 "작업 전 문답 -> 작업 -> 산출물 정리(requirements/changes)" 흐름을 따르게 유도 |
+| `dead-code-cleanup-rules.md` | 코드 변경 작업 후 미사용/도달 불가가 된 코드·데이터를 검증해 삭제 후보를 표로 정리하고 사용자 승인 하에만 삭제 |
+| `clean-final-state-rules.md` | 산출물에 배너·정정 주석·옛 코드 병기 같은 이력 흔적을 남기지 않고 "지금 무엇인지"(최종 상태)만 기준으로 작성 |
 
 ## inclusion 모드
 

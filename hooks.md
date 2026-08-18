@@ -20,6 +20,7 @@ hooks 목록과 steering과의 구분 기준을 정리한 문서입니다.
 | `context-budget-guard.json` | PreToolUse(읽기/검색 도구) | 대용량 파일 통째 읽기·광역 검색을 막아 컨텍스트 폭증 방지 |
 | `markdown-chunk-guard.json` | PreToolUse(fs_write/fs_append) | 긴 `.md` 작성 시 청크 상한선을 지키도록 상기 |
 | `no-workspace-scripts.json` | PostFileCreate(.ps1/.py) | 워크스페이스에 스크립트 파일이 생기면 파일 없는 실행으로 유도 |
+| `post-task-cleanup-check.json` | PostTaskExec | spec 태스크 완료 직후 미사용 코드 삭제 검사(dead-code-cleanup)와 최종 상태 작성(clean-final-state) 규칙을 실행하도록 유도 |
 
 ## steering과 hooks의 구분
 
