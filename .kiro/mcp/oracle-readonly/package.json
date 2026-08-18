@@ -1,0 +1,19 @@
+{
+  "name": "oracle-readonly-mcp",
+  "version": "1.0.0",
+  "description": "Read-only Oracle MCP server (stdio). Generalized example.",
+  "type": "commonjs",
+  "bin": {
+    "oracle-readonly-mcp": "server.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test:connection": "node server.js --test-connection",
+    "test:validation": "node test-validation.mjs",
+    "test:e2e": "node test-mcp-client.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "oracledb": "^6.0.0"
+  }
+}
