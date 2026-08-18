@@ -1,0 +1,19 @@
+{
+  "_comment": "Kiro MCP 등록 예시. 크리덴셜/경로는 각자 로컬 값으로 채우세요(이 파일은 공유용 템플릿).",
+  "mcpServers": {
+    "oracle-readonly": {
+      "command": "node",
+      "args": [".kiro/mcp/oracle-readonly/server.js"],
+      "env": {
+        "ORACLE_USER": "<DB_USER>",
+        "ORACLE_PASSWORD": "<DB_PASSWORD>",
+        "ORACLE_DSN": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=<DB_HOST>)(PORT=1521))(CONNECT_DATA=(SID=<DB_SID>)))",
+        "ORACLE_CLIENT_LIB_DIR": "<INSTANT_CLIENT_DIR_OR_REMOVE_FOR_THIN>",
+        "ORACLE_MAX_ROWS": "100",
+        "ORACLE_QUERY_TIMEOUT_MS": "30000"
+      },
+      "disabled": false,
+      "autoApprove": ["list_tables", "describe_table"]
+    }
+  }
+}
