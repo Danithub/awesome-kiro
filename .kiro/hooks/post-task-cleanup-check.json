@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Post-Task Cleanup & Clean-State Check",
+      "trigger": "PostTaskExec",
+      "description": "spec 태스크 완료 직후, 미사용 코드 삭제 검사 규칙과 최종 상태 작성 규칙을 실행하도록 트리거합니다.",
+      "action": {
+        "type": "agent",
+        "prompt": "방금 spec 태스크가 완료되었습니다. 이 작업이 코드/설정을 변경했다면, 다음 두 steering 규칙을 지금 실행하세요.\n\n1. dead-code-cleanup-rules: 이번 변경으로 도달 불가/미사용이 된 코드·데이터를 검증(grep 전역 참조 검색 + 동적 참조 점검)하고, 삭제 후보를 표로 정리해 사용자 승인을 받으세요. 임의 삭제 금지.\n2. clean-final-state-rules: 산출물에 배너/정정 주석/이력 흔적/주석 처리된 옛 코드가 남아 있지 않은지 점검하고, 최종 결정 기준으로 정리하세요.\n\n코드 변경이 없던 태스크(단순 조회/문서 확인 등)라면 이 검사는 생략하세요."
+      }
+    }
+  ]
+}
