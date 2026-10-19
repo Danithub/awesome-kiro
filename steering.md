@@ -29,15 +29,13 @@ steering은 Kiro가 응답할 때 **항상(또는 특정 조건에서) 함께 �
 |------|------|
 | `language-rules.md` | Kiro가 항상 한국어 존댓말로 답변하도록 강제 |
 | `chat-turn-management.md` | 매 응답 말미에 "턴 상태"를 표시하고, 적정 시점에 새 채팅 전환을 안내 |
-| `long-markdown-doc-rules.md` | 긴 `.md`(requirements/design/tasks) 생성 시 청크 단위로 나눠 잘림·실패 방지 |
-| `powershell-rules.md` | 스크립트를 워크스페이스에 파일로 남기지 않고 실행(인라인/stdin/EncodedCommand) |
-| `context-budget-rules.md` | 대용량 파일 통째 읽기·광역 검색을 피해 컨텍스트 폭증 방지 |
-| `subagent-fallback-rules.md` | 서브에이전트 위임이 실패/취소되면 멈추지 말고 직접 수행 |
-| `guide-routing-rules.md` | 요청에 특정 키워드가 나오면 `.kiro/guides/`의 해당 통합 가이드를 자동으로 참고 |
 | `tilde-strikethrough-rules.md` | 범위표기 `~`가 마크다운 취소선으로 오작동하는 문제 방지 |
 | `default-as-spec-workflow.md` | default(Vibe) 세션도 Spec처럼 "작업 전 문답 -> 작업 -> 산출물 정리(requirements/changes)" 흐름을 따르게 유도 |
-| `dead-code-cleanup-rules.md` | 코드 변경 작업 후 미사용/도달 불가가 된 코드·데이터를 검증해 삭제 후보를 표로 정리하고 사용자 승인 하에만 삭제 |
-| `clean-final-state-rules.md` | 산출물에 배너·정정 주석·옛 코드 병기 같은 이력 흔적을 남기지 않고 "지금 무엇인지"(최종 상태)만 기준으로 작성 |
+| `workflow-fallback-rules.md` | 백그라운드 Workflow 실행이 끊기면 되묻지 않고 남은 작업을 현재 세션에서 직접 이어서 수행 |
+
+IDE 1.2 이후에는 대용량 파일 읽기, 긴 문서 작성, 스크립트 실행 같은 동작을 Kiro가
+별도 규칙 없이도 안정적으로 처리해서, 관련 규칙과 hooks는 수록하지 않습니다.
+자세한 배경은 [kiro-1.2-setup.md](kiro-1.2-setup.md)를 참고하세요.
 
 ## inclusion 모드
 
@@ -53,7 +51,8 @@ inclusion: always
 |------|------|---------|
 | `always` | 모든 응답에 항상 포함 (기본) | `inclusion: always` |
 | `fileMatch` | 특정 파일을 열 때만 포함 | `inclusion: fileMatch` + `fileMatchPattern: 'README*'` |
-| `manual` | 채팅에서 `#`로 직접 참조할 때만 포함 | `inclusion: manual` |
+| `manual` | 채팅에서 `#`나 `/` 슬래시 명령으로 직접 부를 때만 포함 | `inclusion: manual` |
+| `auto` | 요청이 `description`과 맞으면 자동으로 포함 (`/`로도 호출 가능) | `inclusion: auto` + `name` + `description` |
 
 환경마다 필요 규칙이 다르면, 공유용 저장소에는 `manual`로 두고 각 프로젝트에서
 필요한 것만 `always`로 바꿔 쓰는 방식도 좋습니다.
