@@ -76,8 +76,7 @@ inclusion: always
 
 ## 5. 작업 후: 산출물 문서(requirements / changes)
 
-작업 완료 후 `.kiro/specs/{spec명}/`에 아래 두 문서를 남긴다. 긴 문서는
-`long-markdown-doc-rules`에 따라 골격 후 청크로 작성한다.
+작업 완료 후 `.kiro/specs/{spec명}/`에 아래 두 문서를 남긴다.
 
 ### 5-1. `requirements.md` (요구사항 + 문답 결과)
 

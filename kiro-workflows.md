@@ -5,6 +5,10 @@
 > **대상 버전:** Kiro IDE 1.0 (최신 1.0.x 릴리스 기준, 1.0.52 이상)
 > Spec / Plan / Bug Fix / Quick Spec 워크플로는 IDE 1.0에서 제공되는 구성입니다.
 > 출처: [Kiro IDE Changelog](https://kiro.dev/changelog/ide/)
+>
+> 이 문서의 "워크플로"는 세션을 시작할 때 고르는 진행 방식입니다. IDE 1.2에서 추가된
+> **Workflows**(여러 에이전트가 단계별로 백그라운드에서 실행하는 레시피)와는 다른
+> 기능입니다. 1.2 이후 권장 구성은 [kiro-1.2-setup.md](kiro-1.2-setup.md)를 참고하세요.
 
 Kiro 세션을 시작할 때 작업 성격에 맞는 진행 방식을 고를 수 있습니다.
 아무것도 고르지 않으면 Default(일반 대화형)로 동작하고, 나머지 4개는 각각
